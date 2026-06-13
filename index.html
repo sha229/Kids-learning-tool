@@ -104,3 +104,37 @@ color:white;
 {letter:"Z",word:"Zebra",emoji:"🦓"}
 ];
 
+let current = 0;
+
+function nextLetter() {
+  current = (current + 1) % alphabet.length;
+
+  document.getElementById("letter").innerHTML = alphabet[current].letter;
+  document.getElementById("word").innerHTML = alphabet[current].word;
+  document.getElementById("image").innerHTML = alphabet[current].emoji;
+}
+
+function speak() {
+  let text = alphabet[current].letter + " for " + alphabet[current].word;
+  let speech = new SpeechSynthesisUtterance(text);
+  speech.lang = "en-US";
+  speechSynthesis.speak(speech);
+}
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+ 
