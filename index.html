@@ -85,59 +85,32 @@ color:white;
 
 <script>
 
-const alphabet=[
-["A","🍎","Apple"],
-["B","⚽","Ball"],
-["C","🐱","Cat"],
-["D","🐶","Dog"],
-["E","🐘","Elephant"],
-["F","🐟","Fish"],
-["G","🦒","Giraffe"],
-["H","🏠","House"],
-["I","🍦","Ice Cream"],
-["J","🤹","Joker"],
-["K","🪁","Kite"],
-["L","🦁","Lion"],
-["M","🌙","Moon"],
-["N","🪺","Nest"],
-["O","🦉","Owl"],
-["P","🐼","Panda"],
-["Q","👑","Queen"],
-["R","🌈","Rainbow"],
-["S","☀️","Sun"],
-["T","🐯","Tiger"],
-["U","☂️","Umbrella"],
-["V","🚐","Van"],
-["W","🍉","Watermelon"],
-["X","🎵","Xylophone"],
-["Y","🛥️","Yacht"],
-["Z","🦓","Zebra"]
+const alphabet=[const alphabet = [
+{letter:"A",word:"Apple",emoji:"🍎"},
+{letter:"B",word:"Ball",emoji:"⚽"},
+{letter:"C",word:"Cat",emoji:"🐱"},
+{letter:"D",word:"Dog",emoji:"🐶"},
+{letter:"E",word:"Elephant",emoji:"🐘"},
+{letter:"F",word:"Fish",emoji:"🐟"},
+{letter:"G",word:"Grapes",emoji:"🍇"},
+{letter:"H",word:"House",emoji:"🏠"},
+{letter:"I",word:"Ice Cream",emoji:"🍦"},
+{letter:"J",word:"Juice",emoji:"🧃"},
+{letter:"K",word:"Kite",emoji:"🪁"},
+{letter:"L",word:"Lion",emoji:"🦁"},
+{letter:"M",word:"Monkey",emoji:"🐵"},
+{letter:"N",word:"Nest",emoji:"🪺"},
+{letter:"O",word:"Orange",emoji:"🍊"},
+{letter:"P",word:"Parrot",emoji:"🦜"},
+{letter:"Q",word:"Queen",emoji:"👑"},
+{letter:"R",word:"Rabbit",emoji:"🐰"},
+{letter:"S",word:"Sun",emoji:"☀️"},
+{letter:"T",word:"Tiger",emoji:"🐯"},
+{letter:"U",word:"Umbrella",emoji:"☂️"},
+{letter:"V",word:"Van",emoji:"🚐"},
+{letter:"W",word:"Watch",emoji:"⌚"},
+{letter:"X",word:"Xylophone",emoji:"🎼"},
+{letter:"Y",word:"Yak",emoji:"🐂"},
+{letter:"Z",word:"Zebra",emoji:"🦓"}
 ];
 
-let index=0;
-
-function nextLetter(){
-index=(index+1)%alphabet.length;
-
-document.getElementById("letter").innerHTML=alphabet[index][0];
-document.getElementById("image").innerHTML=alphabet[index][1];
-document.getElementById("word").innerHTML=alphabet[index][2];
-}
-
-function speak(){
-
-let text=
-alphabet[index][0] +
-" for " +
-alphabet[index][2];
-
-speechSynthesis.speak(
-new SpeechSynthesisUtterance(text)
-);
-
-}
-
-</script>
-
-</body>
-</html>
