@@ -1,10 +1,103 @@
+
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Kids Learning Tool</title>
+<title>Kids Alphabet Learning</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body{
+font-family:Arial,sans-serif;
+text-align:center;
+background:#f0f8ff;
+padding:20px;
+}
+h1{
+color:#ff6600;
+}
+.card{
+background:white;
+padding:20px;
+border-radius:15px;
+max-width:350px;
+margin:auto;
+box-shadow:0 0 10px rgba(0,0,0,0.2);
+}
+.letter{
+font-size:80px;
+font-weight:bold;
+color:#0066ff;
+}
+.word{
+font-size:35px;
+margin:10px;
+}
+button{
+padding:12px 20px;
+font-size:18px;
+border:none;
+border-radius:10px;
+cursor:pointer;
+margin:5px;
+}
+</style>
 </head>
 <body>
-    <h1>Welcome to Kids Learning Tool</h1>
-    <p>My first GitHub Pages website is working!</p>
+
+<h1>🌟 Kids Alphabet Learning 🌟</h1>
+
+<div class="card">
+<div class="letter" id="letter">A</div>
+<div class="word" id="word">🍎 Apple</div>
+
+<button onclick="speak()">🔊 Speak</button>
+<button onclick="nextLetter()">➡ Next</button>
+</div>
+
+<script>
+
+const data=[
+["A","🍎 Apple"],
+["B","⚽ Ball"],
+["C","🐱 Cat"],
+["D","🐶 Dog"],
+["E","🐘 Elephant"],
+["F","🐟 Fish"],
+["G","🦒 Giraffe"],
+["H","🏠 House"],
+["I","🍦 Ice Cream"],
+["J","🤹 Joker"],
+["K","🪁 Kite"],
+["L","🦁 Lion"],
+["M","🌙 Moon"],
+["N","🪺 Nest"],
+["O","🦉 Owl"],
+["P","🐼 Panda"],
+["Q","👑 Queen"],
+["R","🌈 Rainbow"],
+["S","☀ Sun"],
+["T","🐯 Tiger"],
+["U","☂ Umbrella"],
+["V","🚐 Van"],
+["W","🍉 Watermelon"],
+["X","❌ Xylophone"],
+["Y","🛳 Yacht"],
+["Z","🦓 Zebra"]
+];
+
+let index=0;
+
+function nextLetter(){
+index=(index+1)%data.length;
+document.getElementById("letter").innerHTML=data[index][0];
+document.getElementById("word").innerHTML=data[index][1];
+}
+
+function speak(){
+let text=data[index][0]+" for "+data[index][1].replace(/[^\w\s]/gi,'');
+speechSynthesis.speak(new SpeechSynthesisUtterance(text));
+}
+
+</script>
+
 </body>
 </html>
